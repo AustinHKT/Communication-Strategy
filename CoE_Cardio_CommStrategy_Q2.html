@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Communication Strategy Q2 — CoE Cardiovascular</title>
+<link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;600;700&family=IBM+Plex+Sans+Thai:wght@300;400;500;600;700&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --purple:   #52489C;
+    --blue:     #4062BB;
+    --teal:     #59C3C3;
+    --light:    #EBEBEB;
+    --coral:    #F45B69;
+    --white:    #FFFFFF;
+    --dark:     #1A1A2E;
+    --text:     #2D2D2D;
+    --text-sub: #6B6B8A;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'IBM Plex Sans Thai', 'Sarabun', sans-serif;
+    background: #F7F7FB;
+    color: var(--text);
+    line-height: 1.7;
+  }
+
+  /* ─── HERO ─── */
+  .hero {
+    background: linear-gradient(135deg, var(--purple) 0%, var(--blue) 60%, #2e5ba8 100%);
+    color: white;
+    padding: 70px 60px 60px;
+    position: relative;
+    overflow: hidden;
+    min-height: 320px;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse 600px 400px at 80% -10%, rgba(89,195,195,0.25) 0%, transparent 70%),
+      radial-gradient(ellipse 400px 300px at -5% 110%, rgba(244,91,105,0.15) 0%, transparent 60%);
+  }
+  .hero::after {
+    content: '♥';
+    position: absolute;
+    right: 60px; top: 50%;
+    transform: translateY(-50%);
+    font-size: 200px;
+    opacity: 0.07;
+    line-height: 1;
+  }
+  .hero-tag {
+    display: inline-block;
+    background: rgba(89,195,195,0.25);
+    border: 1px solid rgba(89,195,195,0.5);
+    color: #7ee8e8;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    padding: 5px 14px;
+    border-radius: 20px;
+    margin-bottom: 18px;
+  }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 46px;
+    font-weight: 900;
+    line-height: 1.1;
+    margin-bottom: 14px;
+    position: relative;
+  }
+  .hero h1 span { color: var(--teal); }
+  .hero-sub {
+    font-size: 16px;
+    opacity: 0.8;
+    max-width: 520px;
+    font-weight: 300;
+    position: relative;
+  }
+  .hero-meta {
+    display: flex;
+    gap: 30px;
+    margin-top: 36px;
+    position: relative;
+  }
+  .hero-meta-item { text-align: left; }
+  .hero-meta-item .val {
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--teal);
+    line-height: 1;
+  }
+  .hero-meta-item .lbl {
+    font-size: 11px;
+    opacity: 0.6;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 3px;
+  }
+  .hero-meta-sep {
+    width: 1px;
+    background: rgba(255,255,255,0.15);
+    align-self: stretch;
+  }
+
+  /* ─── LAYOUT ─── */
+  .container { max-width: 1100px; margin: 0 auto; padding: 50px 40px; }
+
+  /* ─── SECTION TITLE ─── */
+  .section-label {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 28px;
+  }
+  .section-label .num {
+    width: 36px; height: 36px;
+    background: var(--purple);
+    color: white;
+    font-size: 14px;
+    font-weight: 700;
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .section-label h2 {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--purple);
+  }
+  .section-label .sub {
+    font-size: 13px;
+    color: var(--text-sub);
+    font-weight: 400;
+    margin-top: 1px;
+  }
+
+  /* ─── OKR BAND ─── */
+  .okr-band {
+    background: var(--purple);
+    color: white;
+    padding: 32px 40px;
+    border-radius: 16px;
+    display: grid;
+    grid-template-columns: 1fr 1px 1fr 1px 1fr 1px 1fr;
+    gap: 0;
+    margin-bottom: 50px;
+  }
+  .okr-item { padding: 0 28px; }
+  .okr-item:first-child { padding-left: 0; }
+  .okr-item:last-child { padding-right: 0; }
+  .okr-sep { background: rgba(255,255,255,0.15); }
+  .okr-item .okr-tag {
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.5);
+    margin-bottom: 6px;
+  }
+  .okr-item .okr-val {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--teal);
+    line-height: 1;
+  }
+  .okr-item .okr-desc {
+    font-size: 12px;
+    color: rgba(255,255,255,0.75);
+    margin-top: 5px;
+    line-height: 1.4;
+  }
+
+  /* ─── AUDIENCE GRID ─── */
+  .audience-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 50px;
+  }
+  .audience-card {
+    background: white;
+    border-radius: 14px;
+    padding: 26px;
+    border-top: 4px solid var(--blue);
+    box-shadow: 0 2px 16px rgba(82,72,156,0.07);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .audience-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 28px rgba(82,72,156,0.13);
+  }
+  .audience-card:nth-child(2) { border-top-color: var(--teal); }
+  .audience-card:nth-child(3) { border-top-color: var(--coral); }
+  .audience-card .icon {
+    width: 44px; height: 44px;
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 20px;
+    margin-bottom: 14px;
+    background: #F0EEFF;
+  }
+  .audience-card:nth-child(2) .icon { background: #E6F9F9; }
+  .audience-card:nth-child(3) .icon { background: #FFF0F1; }
+  .audience-card h3 { font-size: 15px; font-weight: 700; margin-bottom: 8px; color: var(--purple); }
+  .audience-card:nth-child(2) h3 { color: #2aa3a3; }
+  .audience-card:nth-child(3) h3 { color: #d63a4a; }
+  .audience-card p { font-size: 13px; color: var(--text-sub); line-height: 1.6; }
+  .audience-card .tag-list { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
+  .audience-card .tag {
+    font-size: 11px;
+    padding: 3px 10px;
+    border-radius: 20px;
+    background: var(--light);
+    color: var(--text-sub);
+    font-weight: 500;
+  }
+
+  /* ─── STRATEGY PILLARS ─── */
+  .pillars { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-bottom: 50px; }
+  .pillar-card {
+    background: white;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 2px 16px rgba(82,72,156,0.07);
+  }
+  .pillar-header {
+    padding: 20px 24px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background: linear-gradient(135deg, var(--purple), var(--blue));
+    color: white;
+  }
+  .pillar-card:nth-child(2) .pillar-header { background: linear-gradient(135deg, var(--blue), #3a8fc4); }
+  .pillar-card:nth-child(3) .pillar-header { background: linear-gradient(135deg, #2aa3a3, var(--teal)); }
+  .pillar-card:nth-child(4) .pillar-header { background: linear-gradient(135deg, #d63a4a, var(--coral)); }
+  .pillar-badge {
+    width: 38px; height: 38px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px;
+    flex-shrink: 0;
+  }
+  .pillar-header-text h3 { font-size: 15px; font-weight: 700; }
+  .pillar-header-text p { font-size: 11px; opacity: 0.75; margin-top: 2px; }
+  .pillar-body { padding: 20px 24px; }
+  .pillar-item {
+    display: flex;
+    gap: 10px;
+    padding: 9px 0;
+    border-bottom: 1px solid #F0F0F7;
+    font-size: 13px;
+    line-height: 1.5;
+  }
+  .pillar-item:last-child { border-bottom: none; padding-bottom: 0; }
+  .pillar-item::before {
+    content: '→';
+    color: var(--teal);
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .pillar-card:nth-child(4) .pillar-item::before { color: var(--coral); }
+
+  /* ─── CHANNEL TABLE ─── */
+  .channel-section { margin-bottom: 50px; }
+  .channel-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .channel-card {
+    background: white;
+    border-radius: 12px;
+    padding: 22px;
+    box-shadow: 0 2px 12px rgba(82,72,156,0.07);
+    position: relative;
+    overflow: hidden;
+  }
+  .channel-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 3px;
+    background: var(--teal);
+  }
+  .channel-card:nth-child(2)::after { background: var(--blue); }
+  .channel-card:nth-child(3)::after { background: var(--coral); }
+  .channel-card:nth-child(4)::after { background: var(--purple); }
+  .channel-card:nth-child(5)::after { background: #2aa3a3; }
+  .channel-card:nth-child(6)::after { background: #d63a4a; }
+  .channel-name { font-size: 14px; font-weight: 700; margin-bottom: 6px; }
+  .channel-target { font-size: 12px; color: var(--text-sub); margin-bottom: 10px; }
+  .channel-items { list-style: none; }
+  .channel-items li {
+    font-size: 12px;
+    padding: 3px 0;
+    color: var(--text);
+    display: flex; gap: 7px;
+  }
+  .channel-items li::before { content: '·'; color: var(--teal); font-weight: 900; font-size: 16px; line-height: 1.1; }
+
+  /* ─── MESSAGE MATRIX ─── */
+  .msg-matrix { background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 2px 16px rgba(82,72,156,0.07); margin-bottom: 50px; }
+  .msg-matrix table { width: 100%; border-collapse: collapse; }
+  .msg-matrix thead th {
+    background: var(--purple);
+    color: white;
+    padding: 14px 18px;
+    font-size: 12px;
+    font-weight: 600;
+    text-align: left;
+    letter-spacing: 0.5px;
+  }
+  .msg-matrix thead th:first-child { border-radius: 0; }
+  .msg-matrix tbody tr { border-bottom: 1px solid #F0F0F7; }
+  .msg-matrix tbody tr:last-child { border-bottom: none; }
+  .msg-matrix tbody tr:hover { background: #FAFAFE; }
+  .msg-matrix td { padding: 14px 18px; font-size: 13px; vertical-align: top; }
+  .msg-matrix td:first-child { font-weight: 600; color: var(--blue); width: 20%; }
+  .msg-matrix td:nth-child(2) { width: 30%; }
+  .msg-matrix td:nth-child(3) { width: 30%; }
+  .msg-matrix td:last-child { width: 20%; }
+  .chip {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 20px;
+    margin: 2px;
+  }
+  .chip-teal { background: #E6F9F9; color: #2aa3a3; }
+  .chip-blue { background: #E8EDFF; color: var(--blue); }
+  .chip-coral { background: #FFF0F1; color: #d63a4a; }
+  .chip-purple { background: #F0EEFF; color: var(--purple); }
+
+  /* ─── TIMELINE ─── */
+  .timeline-wrap { margin-bottom: 50px; }
+  .timeline-months { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .month-card {
+    background: white;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 2px 16px rgba(82,72,156,0.07);
+  }
+  .month-header {
+    padding: 16px 22px;
+    color: white;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .month-card:nth-child(1) .month-header { background: var(--blue); }
+  .month-card:nth-child(2) .month-header { background: var(--purple); }
+  .month-card:nth-child(3) .month-header { background: #2aa3a3; }
+  .month-header .mname { font-size: 16px; font-weight: 700; }
+  .month-header .mfocus { font-size: 11px; opacity: 0.8; }
+  .month-body { padding: 18px 22px; }
+  .m-item {
+    display: flex; gap: 10px;
+    font-size: 13px;
+    padding: 7px 0;
+    border-bottom: 1px solid #F5F5FA;
+  }
+  .m-item:last-child { border-bottom: none; }
+  .m-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--teal);
+    margin-top: 5px;
+    flex-shrink: 0;
+  }
+  .month-card:nth-child(2) .m-dot { background: var(--coral); }
+  .month-card:nth-child(3) .m-dot { background: var(--blue); }
+
+  /* ─── KPI TABLE ─── */
+  .kpi-table { background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 2px 16px rgba(82,72,156,0.07); margin-bottom: 50px; }
+  .kpi-table table { width: 100%; border-collapse: collapse; }
+  .kpi-table thead th { background: var(--blue); color: white; padding: 13px 18px; font-size: 12px; font-weight: 600; text-align: left; }
+  .kpi-table tbody tr { border-bottom: 1px solid #F0F0F7; }
+  .kpi-table tbody tr:last-child { border-bottom: none; }
+  .kpi-table tbody tr:hover { background: #FAFAFE; }
+  .kpi-table td { padding: 13px 18px; font-size: 13px; }
+  .kpi-table td:first-child { font-weight: 600; }
+  .progress-bar { background: var(--light); border-radius: 20px; height: 6px; width: 100px; overflow: hidden; }
+  .progress-fill { height: 100%; border-radius: 20px; background: linear-gradient(90deg, var(--teal), var(--blue)); }
+  .badge-priority {
+    display: inline-block; font-size: 10px; font-weight: 700;
+    padding: 2px 8px; border-radius: 4px;
+  }
+  .high { background: #FFF0F1; color: #d63a4a; }
+  .mid  { background: #E8EDFF; color: var(--blue); }
+  .low  { background: #F0F0F7; color: var(--text-sub); }
+
+  /* ─── FOOTER ─── */
+  .footer {
+    background: var(--dark);
+    color: rgba(255,255,255,0.5);
+    padding: 28px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+  }
+  .footer strong { color: white; }
+
+  /* ─── DIVIDER ─── */
+  .divider { height: 1px; background: linear-gradient(90deg, var(--teal), var(--blue), transparent); margin: 50px 0; opacity: 0.3; }
+  .section-wrap { margin-bottom: 50px; }
+</style>
+</head>
+<body>
+
+<!-- ══════════ HERO ══════════ -->
+<div class="hero">
+  <div class="hero-tag">Q2 · 2026 · Confidential</div>
+  <h1>Communication Strategy<br><span>CoE Cardiovascular</span></h1>
+  <p class="hero-sub">กลยุทธ์การสื่อสารและประชาสัมพันธ์ เพื่อขยายฐานผู้ป่วยใหม่และเพิ่มประสิทธิภาพการเข้าถึงกลุ่มเป้าหมาย</p>
+  <div class="hero-meta">
+    <div class="hero-meta-item">
+      <div class="val">655.5M</div>
+      <div class="lbl">Revenue Target 2026 (THB)</div>
+    </div>
+    <div class="hero-meta-sep"></div>
+    <div class="hero-meta-item">
+      <div class="val">2,500</div>
+      <div class="lbl">New Patient Target (HN)</div>
+    </div>
+    <div class="hero-meta-sep"></div>
+    <div class="hero-meta-item">
+      <div class="val">+13.2%</div>
+      <div class="lbl">New Patient Growth Gap</div>
+    </div>
+    <div class="hero-meta-sep"></div>
+    <div class="hero-meta-item">
+      <div class="val">Q2</div>
+      <div class="lbl">ไตรมาสที่ดำเนินการ</div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- ══════════ OKR ALIGNMENT ══════════ -->
+  <div class="section-wrap">
+    <div class="section-label">
+      <div class="num">0</div>
+      <div>
+        <h2>OKR Alignment</h2>
+        <div class="sub">เป้าหมายองค์กรที่กลยุทธ์การสื่อสารนี้รับผิดชอบ</div>
+      </div>
+    </div>
+    <div class="okr-band">
+      <div class="okr-item">
+        <div class="okr-tag">Org. Strategic Objective</div>
+        <div class="okr-val" style="font-size:18px; line-height:1.3;">SO4</div>
+        <div class="okr-desc">Market Adaptive Strategy</div>
+      </div>
+      <div class="okr-sep"></div>
+      <div class="okr-item">
+        <div class="okr-tag">Org. Key Result</div>
+        <div class="okr-val" style="font-size:15px; line-height:1.4;">KR4.1</div>
+        <div class="okr-desc">Increase Number of New Patients 10% by 2027</div>
+      </div>
+      <div class="okr-sep"></div>
+      <div class="okr-item">
+        <div class="okr-tag">Key Result (CoE)</div>
+        <div class="okr-val">2,208 → 2,500</div>
+        <div class="okr-desc">จำนวนผู้ป่วยใหม่ทุกหัตถการของ Cardio (HN)</div>
+      </div>
+      <div class="okr-sep"></div>
+      <div class="okr-item">
+        <div class="okr-tag">Communication Goal</div>
+        <div class="okr-val">+292 HN</div>
+        <div class="okr-desc">ผู้ป่วยใหม่ที่ต้องเพิ่มผ่านการสื่อสาร Q2</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════ TARGET AUDIENCE ══════════ -->
+  <div class="section-wrap">
+    <div class="section-label">
+      <div class="num">1</div>
+      <div>
+        <h2>Target Audience Segmentation</h2>
+        <div class="sub">กลุ่มเป้าหมายหลัก 3 กลุ่ม สอดคล้องกับ H1 / H2 / H3 Strategy</div>
+      </div>
+    </div>
+    <div class="audience-grid">
+      <div class="audience-card">
+        <div class="icon">🫀</div>
+        <h3>กลุ่ม Core (H1) — ผู้ป่วยหัตถการหลัก</h3>
+        <p>ผู้ป่วยที่มีความเสี่ยงหรือได้รับการวินิจฉัยโรคหัวใจ ต้องการ Cath-PCI, Open Heart Surgery, CIED หรือ NCDs Management</p>
+        <div class="tag-list">
+          <span class="tag">อายุ 45–70 ปี</span>
+          <span class="tag">Hypertension / DLP</span>
+          <span class="tag">ภาวะหัวใจล้มเหลว</span>
+          <span class="tag">กลุ่มประกัน/เบิกได้</span>
+        </div>
+      </div>
+      <div class="audience-card">
+        <div class="icon">📡</div>
+        <h3>กลุ่ม Expansion (H2) — ตลาดใหม่</h3>
+        <p>ผู้ป่วยที่ยังไม่รู้ตัวว่าเป็นโรค หรืออยู่ในกลุ่มหัตถการใหม่ เช่น Arrhythmia, PVA และ Structural Heart</p>
+        <div class="tag-list">
+          <span class="tag">Arrhythmia</span>
+          <span class="tag">Peripheral Vascular</span>
+          <span class="tag">Structural Heart</span>
+          <span class="tag">Untapped Segment</span>
+        </div>
+      </div>
+      <div class="audience-card">
+        <div class="icon">🏥</div>
+        <h3>กลุ่ม Referral (H3) — เครือข่ายส่งต่อ</h3>
+        <p>แพทย์และโรงพยาบาลภายนอกที่มีศักยภาพส่งต่อผู้ป่วยวิกฤต โดยเฉพาะ Shock Center Transfer Case</p>
+        <div class="tag-list">
+          <span class="tag">แพทย์ภายนอก</span>
+          <span class="tag">โรงพยาบาลชุมชน</span>
+          <span class="tag">คลินิกเอกชน</span>
+          <span class="tag">Referring Network</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════ KEY MESSAGES ══════════ -->
+  <div class="section-wrap">
+    <div class="section-label">
+      <div class="num">2</div>
+      <div>
+        <h2>Key Message Matrix</h2>
+        <div class="sub">สารสื่อสารหลักแยกตามกลุ่มเป้าหมายและบริการ</div>
+      </div>
+    </div>
+    <div class="msg-matrix">
+      <table>
+        <thead>
+          <tr>
+            <th>บริการ</th>
+            <th>Key Message (ผู้ป่วย)</th>
+            <th>Key Message (แพทย์/เครือข่าย)</th>
+            <th>ช่องทางหลัก</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Cath-PCI</td>
+            <td>ตรวจพบเร็ว รักษาได้ทัน ลดความเสี่ยงหัวใจวายเฉียบพลัน</td>
+            <td>ทีมแพทย์ผู้เชี่ยวชาญ พร้อม Cath Lab มาตรฐานสูง 24/7</td>
+            <td><span class="chip chip-teal">Facebook</span><span class="chip chip-blue">LINE OA</span></td>
+          </tr>
+          <tr>
+            <td>EP Study & Ablation</td>
+            <td>หัวใจเต้นผิดจังหวะ อย่านิ่งเฉย รักษาได้ไม่ต้องผ่าตัด</td>
+            <td>ศักยภาพ EP Lab และความเชี่ยวชาญด้าน Ablation ระดับสูง</td>
+            <td><span class="chip chip-teal">YouTube</span><span class="chip chip-coral">Health Talk</span></td>
+          </tr>
+          <tr>
+            <td>Peripheral Vascular</td>
+            <td>ปวดขา ชาเท้า อาจเป็นสัญญาณโรคหลอดเลือด ตรวจก่อนสายเกินไป</td>
+            <td>ทีม PVA พร้อมรองรับ Complex Case ด้วย Endovascular Technique</td>
+            <td><span class="chip chip-blue">SEO/Content</span><span class="chip chip-purple">Community</span></td>
+          </tr>
+          <tr>
+            <td>Structural Heart (TAVI)</td>
+            <td>โรคลิ้นหัวใจ ไม่ต้องเสี่ยงผ่าตัดเปิดหน้าอก ด้วยเทคโนโลยี TAVI</td>
+            <td>Structural Heart Program ครบวงจร Heart Team Approach</td>
+            <td><span class="chip chip-coral">Press Release</span><span class="chip chip-teal">Webinar</span></td>
+          </tr>
+          <tr>
+            <td>NCDs (HT/DLP)</td>
+            <td>ควบคุมความดัน-ไขมัน ดูแลหัวใจยาว ๆ กับทีมเฉพาะทาง</td>
+            <td>Chronic Disease Management Program เชื่อมต่อกับ Cardiology</td>
+            <td><span class="chip chip-blue">LINE OA</span><span class="chip chip-purple">Wellness App</span></td>
+          </tr>
+          <tr>
+            <td>Shock Center</td>
+            <td>—</td>
+            <td>ส่งต่อผู้ป่วยวิกฤตได้ตลอด 24 ชั่วโมง ทีมพร้อม รับไว รักษาเร็ว</td>
+            <td><span class="chip chip-coral">Medical Letter</span><span class="chip chip-teal">CME Event</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- ══════════ STRATEGY PILLARS ══════════ -->
+  <div class="section-wrap">
+    <div class="section-label">
+      <div class="num">3</div>
+      <div>
+        <h2>4 Communication Pillars</h2>
+        <div class="sub">เสาหลัก 4 ด้านของกลยุทธ์การสื่อสาร Q2</div>
+      </div>
+    </div>
+    <div class="pillars">
+      <div class="pillar-card">
+        <div class="pillar-header">
+          <div class="pillar-badge">📣</div>
+          <div class="pillar-header-text">
+            <h3>Awareness — สร้างการรับรู้</h3>
+            <p>เพิ่มการรู้จักบริการในวงกว้าง โดยเฉพาะ H2</p>
+          </div>
+        </div>
+        <div class="pillar-body">
+          <div class="pillar-item">สร้าง Content Series "รู้ทันโรคหัวใจ" ผ่าน Facebook & YouTube</div>
+          <div class="pillar-item">ออกบูธสุขภาพ / Health Screening ในชุมชน</div>
+          <div class="pillar-item">ประชาสัมพันธ์ Structural Heart & PVA ผ่าน Media เฉพาะทาง</div>
+          <div class="pillar-item">Press Release ผลสำเร็จ TAVI / EP Ablation ทุกไตรมาส</div>
+        </div>
+      </div>
+      <div class="pillar-card">
+        <div class="pillar-header">
+          <div class="pillar-badge">🎯</div>
+          <div class="pillar-header-text">
+            <h3>Engagement — สร้างความผูกพัน</h3>
+            <p>กระตุ้นให้กลุ่มเสี่ยงเข้าสู่กระบวนการดูแล</p>
+          </div>
+        </div>
+        <div class="pillar-body">
+          <div class="pillar-item">LINE OA Campaign: ประเมินความเสี่ยงโรคหัวใจออนไลน์</div>
+          <div class="pillar-item">Health Talk / Webinar สำหรับกลุ่ม NCDs และญาติผู้ป่วย</div>
+          <div class="pillar-item">Patient Testimonial Video — ผู้ป่วย TAVI, PVA, EP แชร์ประสบการณ์</div>
+          <div class="pillar-item">ระบบนัดหมายออนไลน์ลัดคิวสำหรับกลุ่มเสี่ยงสูง</div>
+        </div>
+      </div>
+      <div class="pillar-card">
+        <div class="pillar-header">
+          <div class="pillar-badge">🔗</div>
+          <div class="pillar-header-text">
+            <h3>Referral Network — เครือข่ายส่งต่อ</h3>
+            <p>ขยาย Referring Base ผ่านช่องทางวิชาชีพ</p>
+          </div>
+        </div>
+        <div class="pillar-body">
+          <div class="pillar-item">จัด CME / Medical Seminar สำหรับแพทย์ภายนอก รายไตรมาส</div>
+          <div class="pillar-item">ส่ง Medical Newsletter อัปเดตศักยภาพบริการ H2-H3</div>
+          <div class="pillar-item">สร้าง Referring Doctor Portal — ส่งต่อ ติดตาม ง่ายขึ้น</div>
+          <div class="pillar-item">MOU กับโรงพยาบาลชุมชนในรัศมีที่กำหนด</div>
+        </div>
+      </div>
+      <div class="pillar-card">
+        <div class="pillar-header">
+          <div class="pillar-badge">📊</div>
+          <div class="pillar-header-text">
+            <h3>Retention & Loyalty — รักษาฐานผู้ป่วยเดิม</h3>
+            <p>เปลี่ยนผู้ป่วยเดิมให้กลายเป็น Ambassador</p>
+          </div>
+        </div>
+        <div class="pillar-body">
+          <div class="pillar-item">Follow-up Communication ผ่าน LINE หลังหัตถการ 7 / 30 / 90 วัน</div>
+          <div class="pillar-item">โปรแกรม "Heart Club" สำหรับผู้ป่วย NCDs / Chronic Care</div>
+          <div class="pillar-item">Word-of-Mouth Campaign: Refer a Friend ลดค่าตรวจ Screening</div>
+          <div class="pillar-item">Annual Health Check-Up Reminder — Cardio Package ผู้ป่วยเก่า</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════ CHANNELS ══════════ -->
+  <div class="section-wrap">
+    <div class="section-label">
+      <div class="num">4</div>
+      <div>
+        <h2>Channel Plan</h2>
+        <div class="sub">ช่องทางการสื่อสารแยกตาม Touchpoint และกลุ่มเป้าหมาย</div>
+      </div>
+    </div>
+    <div class="channel-grid">
+      <div class="channel-card">
+        <div class="channel-name">📱 Social Media (Facebook/IG)</div>
+        <div class="channel-target">กลุ่ม Core + Expansion | อายุ 35–65 ปี</div>
+        <ul class="channel-items">
+          <li>Content Series โรคหัวใจรายสัปดาห์</li>
+          <li>Infographic อาการเตือน / สถิติ</li>
+          <li>Facebook Live: แพทย์ตอบคำถาม</li>
+          <li>Paid Ads ตาม Persona กลุ่มเสี่ยง</li>
+        </ul>
+      </div>
+      <div class="channel-card">
+        <div class="channel-name">💬 LINE Official Account</div>
+        <div class="channel-target">ผู้ป่วยปัจจุบัน + NCDs Group</div>
+        <ul class="channel-items">
+          <li>Health Risk Assessment Chatbot</li>
+          <li>นัดหมายและ Follow-up อัตโนมัติ</li>
+          <li>ส่ง Health Tips ประจำสัปดาห์</li>
+          <li>Rich Menu บริการ Cardio ครบ</li>
+        </ul>
+      </div>
+      <div class="channel-card">
+        <div class="channel-name">🎥 YouTube / Video Content</div>
+        <div class="channel-target">กลุ่ม Expansion | ต้องการข้อมูลลึก</div>
+        <ul class="channel-items">
+          <li>Patient Journey: TAVI, EP, PVA</li>
+          <li>แพทย์อธิบายหัตถการสั้น 2–3 นาที</li>
+          <li>Testimonial Video ผู้ป่วยจริง</li>
+          <li>Embed ในเว็บไซต์โรงพยาบาล</li>
+        </ul>
+      </div>
+      <div class="channel-card">
+        <div class="channel-name">🌐 Website & SEO</div>
+        <div class="channel-target">ผู้ค้นหาข้อมูลโรค / อาการ</div>
+        <ul class="channel-items">
+          <li>Landing Page แยกรายหัตถการ H2</li>
+          <li>บทความ SEO: "ปวดขาเรื้อรัง", "หัวใจเต้นเร็ว"</li>
+          <li>Doctor Profile ทีม Cardio ครบถ้วน</li>
+          <li>ปุ่ม Appointment CTA ทุกหน้า</li>
+        </ul>
+      </div>
+      <div class="channel-card">
+        <div class="channel-name">🏥 In-Hospital Touchpoint</div>
+        <div class="channel-target">ผู้ป่วย Walk-in + ญาติ</div>
+        <ul class="channel-items">
+          <li>Digital Signage บริการ H2 ในพื้นที่รอ</li>
+          <li>แผ่นพับ / Brochure แยกโรค</li>
+          <li>Nurse Educator แนะนำบริการ</li>
+          <li>QR Code ลิงก์ Content และนัดหมาย</li>
+        </ul>
+      </div>
+      <div class="channel-card">
+        <div class="channel-name">👨‍⚕️ Medical Professional Channel</div>
+        <div class="channel-target">แพทย์และโรงพยาบาลเครือข่าย</div>
+        <ul class="channel-items">
+          <li>CME Seminar / Case Conference</li>
+          <li>Medical Newsletter รายไตรมาส</li>
+          <li>Referring Doctor Hotline เฉพาะ</li>
+          <li>Hospital Visit ทีม BD Cardiovascular</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════ TIMELINE ══════════ -->
+  <div class="section-wrap">
+    <div class="section-label">
+      <div class="num">5</div>
+      <div>
+        <h2>Q2 Activity Timeline</h2>
+        <div class="sub">แผนกิจกรรมการสื่อสาร เมษายน — มิถุนายน 2026</div>
+      </div>
+    </div>
+    <div class="timeline-months">
+      <div class="month-card">
+        <div class="month-header">
+          <div>
+            <div class="mname">เมษายน 2026</div>
+            <div class="mfocus">Awareness Launch</div>
+          </div>
+          <div style="font-size:22px;">📡</div>
+        </div>
+        <div class="month-body">
+          <div class="m-item"><div class="m-dot"></div><div>Kick-off Content Series "รู้ทันโรคหัวใจ" บน Facebook</div></div>
+          <div class="m-item"><div class="m-dot"></div><div>เปิด LINE OA Risk Assessment Chatbot</div></div>
+          <div class="m-item"><div class="m-dot"></div><div>Launch Landing Page บริการ PVA และ EP Ablation</div></div>
+          <div class="m-item"><div class="m-dot"></div><div>ส่ง Medical Newsletter ฉบับที่ 1 ให้เครือข่ายแพทย์</div></div>
+          <div class="m-item"><div class="m-dot"></div><div>ติดตั้ง Digital Signage ในพื้นที่โรงพยาบาล</div></div>
+        </div>
+      </div>
+      <div class="month-card">
+        <div class="month-header">
+          <div>
+            <div class="mname">พฤษภาคม 2026</div>
+            <div class="mfocus">Engagement & Event</div>
+          </div>
+          <div style="font-size:22px;">🎯</div>
+        </div>
+        <div class="month-body">
+          <div class="m-item"><div class="m-dot"></div><div>Health Talk: "โรคหัวใจเต้นผิดจังหวะ" (สาธารณะ)</div></div>
+          <div class="m-item"><div class="m-dot"></div><div>CME Seminar สำหรับแพทย์ภายนอก ครั้งที่ 1</div></div>
+          <div class="m-item"><div class="m-dot"></div><div>เปิดตัว Patient Testimonial Video (TAVI / PVA)</div></div>
+          <div class="m-item"><div class="m-dot"></div><div>Facebook Live: แพทย์ตอบคำถามโรค PVA</div></div>
+          <div class="m-item"><div class="m-dot"></div><div>Paid Ads Campaign กลุ่ม Arrhythmia + PVA</div></div>
+        </div>
+      </div>
+      <div class="month-card">
+        <div class="month-header">
+          <div>
+            <div class="mname">มิถุนายน 2026</div>
+            <div class="mfocus">Conversion & Review</div>
+          </div>
+          <div style="font-size:22px;">📊</div>
+        </div>
+        <div class="month-body">
+          <div class="m-item"><div class="m-dot"></div><div>Outreach ชุมชน — Health Screening วันหัวใจโลก</div></div>
+          <div class="m-item"><div class="m-dot"></div><div>Referral Campaign: "ส่งต่อผู้ป่วยหัวใจวิกฤต" กับ รพ.เครือข่าย</div></div>
+          <div class="m-item"><div class="m-dot"></div><div>Review KPI Q2 และประเมิน New HN จากแคมเปญ</div></div>
+          <div class="m-item"><div class="m-dot"></div><div>วางแผนปรับ Strategy สำหรับ Q3</div></div>
+          <div class="m-item"><div class="m-dot"></div><div>สรุป Case Study ความสำเร็จ H2 เตรียม Press Release</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════ KPI ══════════ -->
+  <div class="section-wrap">
+    <div class="section-label">
+      <div class="num">6</div>
+      <div>
+        <h2>KPI & Measurement</h2>
+        <div class="sub">ตัวชี้วัดความสำเร็จของกลยุทธ์การสื่อสาร Q2</div>
+      </div>
+    </div>
+    <div class="kpi-table">
+      <table>
+        <thead>
+          <tr>
+            <th>KPI</th>
+            <th>Baseline / ปัจจุบัน</th>
+            <th>Target Q2</th>
+            <th>วิธีวัด</th>
+            <th>Priority</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>จำนวน New Patient (HN)</td>
+            <td>2,208 HN/ปี</td>
+            <td>+73 HN (Q2)</td>
+            <td>HIS / OPD Report</td>
+            <td><span class="badge-priority high">HIGH</span></td>
+          </tr>
+          <tr>
+            <td>Organic Reach (Social)</td>
+            <td>—</td>
+            <td>50,000 reach/เดือน</td>
+            <td>Facebook Insights</td>
+            <td><span class="badge-priority high">HIGH</span></td>
+          </tr>
+          <tr>
+            <td>LINE OA Subscribers</td>
+            <td>—</td>
+            <td>+500 สมาชิกใหม่</td>
+            <td>LINE Manager</td>
+            <td><span class="badge-priority mid">MED</span></td>
+          </tr>
+          <tr>
+            <td>Risk Assessment Completed</td>
+            <td>—</td>
+            <td>200 ราย/เดือน</td>
+            <td>Chatbot Dashboard</td>
+            <td><span class="badge-priority mid">MED</span></td>
+          </tr>
+          <tr>
+            <td>Referral Case (H3)</td>
+            <td>0</td>
+            <td>2 Transfer Cases</td>
+            <td>Refer Log / BD Report</td>
+            <td><span class="badge-priority high">HIGH</span></td>
+          </tr>
+          <tr>
+            <td>Event Attendance</td>
+            <td>—</td>
+            <td>CME ≥30 / Health Talk ≥80</td>
+            <td>Registration Data</td>
+            <td><span class="badge-priority mid">MED</span></td>
+          </tr>
+          <tr>
+            <td>Website Traffic (Cardio)</td>
+            <td>—</td>
+            <td>+30% vs Q1</td>
+            <td>Google Analytics</td>
+            <td><span class="badge-priority low">LOW</span></td>
+          </tr>
+          <tr>
+            <td>Appointment Conversion Rate</td>
+            <td>—</td>
+            <td>≥15% จาก Digital</td>
+            <td>CRM / Call Center</td>
+            <td><span class="badge-priority high">HIGH</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</div><!-- /container -->
+
+<div class="footer">
+  <div><strong>CoE Cardiovascular</strong> · Communication Strategy Q2 · 2026</div>
+  <div>OKR Ref: SO4 · KR4.1 · Target 2,500 HN · Revenue 655.5M THB</div>
+  <div>Prepared by BD Cardiovascular Team</div>
+</div>
+
+</body>
+</html>

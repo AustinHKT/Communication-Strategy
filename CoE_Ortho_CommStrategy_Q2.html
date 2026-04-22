@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>CoE Orthopaedic — Communication Strategy Q2 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;600;700;800&display=swap" rel="stylesheet"/>
+<style>
+  :root{
+    --purple:#52489C; --blue:#4062BB; --teal:#59C3C3;
+    --light:#EBEBEB; --red:#F45B69;
+    --bg:#F5F6FA; --card:#FFFFFF;
+    --text:#1a1a2e; --muted:#7a7a9a; --border:#DDDDE8;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Sarabun',sans-serif;background:var(--bg);color:var(--text);font-size:14px;line-height:1.6}
+
+  /* HEADER */
+  .header{background:linear-gradient(135deg,var(--purple),var(--blue));padding:32px 48px 28px;color:#fff;position:relative;overflow:hidden}
+  .header::before{content:'';position:absolute;top:-60px;right:-60px;width:220px;height:220px;border-radius:50%;background:rgba(255,255,255,0.07);pointer-events:none}
+  .header::after{content:'';position:absolute;bottom:-40px;right:220px;width:140px;height:140px;border-radius:50%;background:rgba(89,195,195,0.2);pointer-events:none}
+  .header-inner{position:relative;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+  .header-eyebrow{font-size:10px;letter-spacing:3px;color:var(--teal);text-transform:uppercase;font-weight:700;margin-bottom:6px}
+  .header-title{font-size:28px;font-weight:800;line-height:1.2}
+  .header-sub{font-size:13px;color:rgba(255,255,255,0.72);margin-top:4px}
+  .header-stats{display:flex;gap:10px;flex-wrap:wrap}
+  .stat-box{background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.22);border-radius:10px;padding:10px 18px;text-align:center;min-width:96px}
+  .stat-val{font-size:20px;font-weight:800;color:var(--teal)}
+  .stat-lbl{font-size:9px;color:rgba(255,255,255,0.6);text-transform:uppercase;letter-spacing:1px;margin-top:2px}
+
+  /* BODY */
+  .body{padding:36px 48px;max-width:1160px;margin:0 auto;display:flex;flex-direction:column;gap:40px}
+
+  /* SECTION */
+  .sec-head{display:flex;align-items:center;gap:14px;margin-bottom:18px}
+  .sec-num{width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:15px;flex-shrink:0}
+  .sec-title{font-size:17px;font-weight:800;color:var(--text)}
+  .sec-sub{font-size:12px;color:var(--muted)}
+  .sec-line{height:1px;flex:1;background:var(--border)}
+
+  /* CARD */
+  .card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px 22px;box-shadow:0 1px 4px rgba(0,0,0,0.05)}
+  .card-grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .card-grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}
+
+  /* BADGE */
+  .badge{display:inline-block;font-size:11px;font-weight:700;padding:3px 12px;border-radius:20px;color:#fff}
+
+  /* TABLE */
+  .tbl{width:100%;border-collapse:collapse;font-size:13px}
+  .tbl th{padding:11px 16px;text-align:left;font-weight:700;font-size:10px;text-transform:uppercase;letter-spacing:1px;border-bottom:2px solid var(--border);color:var(--purple);background:rgba(82,72,156,0.06)}
+  .tbl td{padding:10px 16px;border-bottom:1px solid var(--border)}
+  .tbl tr:nth-child(even) td{background:rgba(235,235,235,0.4)}
+  .tbl-wrap{background:var(--card);border:1px solid var(--border);border-radius:14px;overflow:hidden;box-shadow:0 1px 6px rgba(0,0,0,0.05)}
+
+  /* DOT ITEM */
+  .dot-item{display:flex;align-items:center;gap:8px;padding:6px 0;border-bottom:1px solid var(--border);font-size:13px;color:var(--text)}
+  .dot{width:6px;height:6px;border-radius:50%;flex-shrink:0}
+  .lbl{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:5px;margin-top:8px}
+
+  /* PROGRESS */
+  .prog-track{height:11px;background:var(--light);border-radius:99px;overflow:hidden;margin-bottom:5px}
+  .prog-fill{height:100%;border-radius:99px;background:linear-gradient(90deg,var(--purple),var(--blue))}
+
+  /* TAG */
+  .tag{display:inline-block;font-size:11px;font-weight:600;padding:3px 10px;border-radius:20px}
+
+  /* TIMELINE */
+  .month-head{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+  .month-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+  .month-label{font-size:14px;font-weight:800}
+  .month-line{height:1px;flex:1;background:var(--border)}
+  .tl-items{display:flex;flex-direction:column;gap:7px;padding-left:20px}
+  .tl-item{display:flex;align-items:center;gap:14px;background:var(--card);border:1px solid var(--border);border-radius:10px;padding:12px 16px;box-shadow:0 1px 3px rgba(0,0,0,0.04)}
+  .tl-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+  .tl-body{flex:1}
+  .tl-act{font-size:13px;font-weight:700;color:var(--text)}
+  .tl-det{font-size:12px;color:var(--muted);margin-top:2px}
+  .tl-tag{font-size:9px;text-transform:uppercase;letter-spacing:1px;font-weight:700;padding:3px 10px;border-radius:20px;white-space:nowrap}
+
+  /* SEGMENT ROW */
+  .seg-row{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:18px 22px;box-shadow:0 1px 4px rgba(0,0,0,0.05)}
+  .seg-grid{display:grid;grid-template-columns:200px 1fr 1fr 1fr;gap:18px;align-items:start}
+
+  /* PILLAR */
+  .pillar-icon{width:42px;height:42px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
+
+  /* MSG BLOCK */
+  .msg-block{border-left:4px solid;border-radius:8px;padding:10px 14px;margin-bottom:8px;font-size:13px;line-height:1.7;font-style:italic}
+
+  /* FOOTER */
+  .footer{text-align:center;font-size:11px;color:var(--muted);border-top:1px solid var(--border);padding-top:20px;letter-spacing:1px}
+
+  /* OKR cascade */
+  .okr-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px 18px;box-shadow:0 1px 4px rgba(0,0,0,0.05)}
+  .okr-main{font-size:22px;font-weight:800;margin-bottom:4px}
+  .okr-sub{font-size:13px;line-height:1.6}
+  .okr-badge{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:6px}
+
+  /* KPI cat header */
+  .kpi-head{padding:10px 18px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:10px}
+  .kpi-head-text{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px}
+</style>
+</head>
+<body>
+
+<!-- ══ HEADER ══ -->
+<div class="header">
+  <div class="header-inner">
+    <div>
+      <div class="header-eyebrow">CoE Orthopaedic · Q2 2026</div>
+      <div class="header-title">Communication Strategy</div>
+      <div class="header-sub">กลยุทธ์การสื่อสาร — กลุ่มผู้ป่วยกระดูกสันหลังและออร์โธปิดิกส์</div>
+    </div>
+    <div class="header-stats">
+      <div class="stat-box"><div class="stat-val">506.8M</div><div class="stat-lbl">Target 2026 (THB)</div></div>
+      <div class="stat-box"><div class="stat-val">108.25%</div><div class="stat-lbl">Rev Portion</div></div>
+      <div class="stat-box"><div class="stat-val">4,000</div><div class="stat-lbl">New HN Target</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="body">
+
+  <!-- ══ 0: OKR ALIGNMENT ══ -->
+  <section>
+    <div class="sec-head">
+      <div class="sec-num" style="background:var(--purple)">0</div>
+      <div><div class="sec-title">OKR Alignment</div><div class="sec-sub">เป้าหมายองค์กรที่กลยุทธ์การสื่อสารนี้รับผิดชอบ</div></div>
+      <div class="sec-line"></div>
+    </div>
+
+    <div class="card-grid3" style="margin-bottom:14px">
+      <div class="okr-card" style="border-top:4px solid var(--purple)">
+        <div class="okr-badge" style="color:var(--purple)">Org. Strategic Objective</div>
+        <div class="okr-main" style="color:var(--purple)">SO4</div>
+        <div class="okr-sub">Market Adaptive Strategy</div>
+      </div>
+      <div class="okr-card" style="border-top:4px solid var(--blue)">
+        <div class="okr-badge" style="color:var(--blue)">Org. Key Result</div>
+        <div class="okr-main" style="color:var(--blue)">KR4.1</div>
+        <div class="okr-sub">Increase Number of New Patients 10% by 2027</div>
+      </div>
+      <div class="okr-card" style="border-top:4px solid var(--teal)">
+        <div class="okr-badge" style="color:var(--teal)">Key Objective — CoE Ortho</div>
+        <div class="okr-main" style="color:var(--teal)">Obj.5</div>
+        <div class="okr-sub">เพิ่มจำนวนผู้ป่วยใหม่ของ CoE Ortho</div>
+      </div>
+    </div>
+
+    <div style="background:var(--card);border:2px solid var(--teal);border-radius:14px;padding:20px 24px;box-shadow:0 4px 16px rgba(89,195,195,0.12);margin-bottom:14px">
+      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;margin-bottom:14px">
+        <div>
+          <div style="font-size:9px;font-weight:700;color:var(--teal);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:4px">Key Result ที่กลยุทธ์สื่อสารนี้รับผิดชอบโดยตรง</div>
+          <div style="font-size:15px;font-weight:800">KR.5.1 — จำนวนคนไข้ใหม่ของ COE Ortho (Non-Trauma)</div>
+        </div>
+        <div style="display:flex;gap:24px">
+          <div style="text-align:center"><div style="font-size:20px;font-weight:800;color:var(--purple)">3,534</div><div style="font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:1px">Baseline 2025 (HN)</div></div>
+          <div style="text-align:center"><div style="font-size:20px;font-weight:800;color:var(--teal)">4,000</div><div style="font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:1px">Target 2026 (HN)</div></div>
+          <div style="text-align:center"><div style="font-size:20px;font-weight:800;color:var(--red)">+466</div><div style="font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:1px">Gap (HN)</div></div>
+          <div style="text-align:center"><div style="font-size:20px;font-weight:800;color:var(--blue)">+13.2%</div><div style="font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:1px">Growth</div></div>
+        </div>
+      </div>
+      <div class="prog-track"><div class="prog-fill" style="width:88%"></div></div>
+      <div style="display:flex;justify-content:space-between;font-size:11px;color:var(--muted)">
+        <span>0</span>
+        <span style="color:var(--blue);font-weight:700">Baseline: 3,534 HN (88%)</span>
+        <span style="color:var(--teal);font-weight:700">Target: 4,000 HN</span>
+      </div>
+    </div>
+
+    <div style="background:rgba(64,98,187,0.06);border:1px solid rgba(64,98,187,0.2);border-left:4px solid var(--blue);border-radius:10px;padding:12px 16px;font-size:13px;line-height:1.8">
+      💡 <strong>Strategic Implication:</strong> กลยุทธ์สื่อสาร Q2 มุ่งเพิ่ม <strong style="color:var(--red)">+466 New HN (+13.2%)</strong> ผ่านการ <strong>สร้าง Awareness</strong> บริการหลัก และ <strong>ขยาย Referral Channel</strong> ทั้ง H1 (OPD-driven) และ H2 (Spine/Hip Expansion)
+    </div>
+  </section>
+
+  <!-- ══ 1: TARGET AUDIENCE ══ -->
+  <section>
+    <div class="sec-head">
+      <div class="sec-num" style="background:var(--blue)">1</div>
+      <div><div class="sec-title">Target Audience Segmentation</div><div class="sec-sub">กลุ่มเป้าหมายหลัก 3 กลุ่ม สอดคล้องกับ H1 / H2 / H3 Strategy</div></div>
+      <div class="sec-line"></div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:12px">
+
+      <!-- H1 -->
+      <div class="seg-row" style="border-left:5px solid var(--purple)">
+        <div class="seg-grid">
+          <div>
+            <span class="badge" style="background:var(--purple)">H1</span>
+            <div style="font-size:14px;font-weight:800;margin-top:8px;line-height:1.4">ผู้ป่วยออร์โธปิดิกส์ทั่วไป</div>
+            <div style="font-size:12px;color:var(--muted)">General Ortho Patient</div>
+            <div style="margin-top:8px;font-size:11px;background:rgba(82,72,156,0.1);border:1px solid rgba(82,72,156,0.2);border-radius:6px;padding:3px 10px;color:var(--purple);font-weight:600;display:inline-block">OPD 32,000 visits/ปี</div>
+          </div>
+          <div>
+            <div class="lbl" style="color:var(--purple)">Pain Points</div>
+            <div class="dot-item"><div class="dot" style="background:var(--purple)"></div>ปวดเข่า / ข้อเสื่อม</div>
+            <div class="dot-item"><div class="dot" style="background:var(--purple)"></div>ปวดไหล่ / rotator cuff</div>
+            <div class="dot-item"><div class="dot" style="background:var(--purple)"></div>ปวดหลัง ระดับเบา–ปานกลาง</div>
+            <div class="lbl" style="color:var(--purple)">Age Range</div>
+            <div style="font-size:13px">40–65 ปี</div>
+          </div>
+          <div>
+            <div class="lbl" style="color:var(--purple)">Purchase Intent</div>
+            <div style="font-size:13px;line-height:1.6;margin-bottom:8px">ตรวจวินิจฉัย / OPD ไม่ต้อง Admit</div>
+            <div class="lbl" style="color:var(--purple)">Channel</div>
+            <div style="font-size:12px;color:var(--muted)">Facebook, LINE OA, SEO, Referral GP</div>
+          </div>
+          <div>
+            <div class="lbl" style="color:var(--purple)">Consumer Insight</div>
+            <div style="background:rgba(82,72,156,0.06);border:1px solid rgba(82,72,156,0.15);border-left:3px solid var(--purple);border-radius:8px;padding:10px 12px;font-size:13px;line-height:1.7">ตัดสินใจจากความสะดวก ราคา และความน่าเชื่อถือของแพทย์</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- H2 -->
+      <div class="seg-row" style="border-left:5px solid var(--blue)">
+        <div class="seg-grid">
+          <div>
+            <span class="badge" style="background:var(--blue)">H2</span>
+            <div style="font-size:14px;font-weight:800;margin-top:8px;line-height:1.4">ผู้ป่วยกระดูกสันหลัง & Hip รุนแรง</div>
+            <div style="font-size:12px;color:var(--muted)">Complex / High-Value Patient</div>
+            <div style="margin-top:8px;font-size:11px;background:rgba(64,98,187,0.1);border:1px solid rgba(64,98,187,0.2);border-radius:6px;padding:3px 10px;color:var(--blue);font-weight:600;display:inline-block">Spine 185 / DAA 47 cases/ปี</div>
+          </div>
+          <div>
+            <div class="lbl" style="color:var(--blue)">Pain Points</div>
+            <div class="dot-item"><div class="dot" style="background:var(--blue)"></div>ปวดหลัง/ขาชาเรื้อรัง</div>
+            <div class="dot-item"><div class="dot" style="background:var(--blue)"></div>ข้อสะโพกเสื่อมระยะสุดท้าย</div>
+            <div class="dot-item"><div class="dot" style="background:var(--blue)"></div>ต้องการผ่าตัด</div>
+            <div class="lbl" style="color:var(--blue)">Age Range</div>
+            <div style="font-size:13px">50–70 ปี</div>
+          </div>
+          <div>
+            <div class="lbl" style="color:var(--blue)">Purchase Intent</div>
+            <div style="font-size:13px;line-height:1.6;margin-bottom:8px">ต้องการ Specialist + ผ่าตัดคุณภาพสูง</div>
+            <div class="lbl" style="color:var(--blue)">Channel</div>
+            <div style="font-size:12px;color:var(--muted)">PR, YouTube, Paid Ads, Doctor Referral</div>
+          </div>
+          <div>
+            <div class="lbl" style="color:var(--blue)">Consumer Insight</div>
+            <div style="background:rgba(64,98,187,0.06);border:1px solid rgba(64,98,187,0.15);border-left:3px solid var(--blue);border-radius:8px;padding:10px 12px;font-size:13px;line-height:1.7">Research หนัก เปรียบเทียบหลายที่ ให้น้ำหนักประสบการณ์แพทย์</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- H3 -->
+      <div class="seg-row" style="border-left:5px solid var(--red)">
+        <div class="seg-grid">
+          <div>
+            <span class="badge" style="background:var(--red)">H3</span>
+            <div style="font-size:14px;font-weight:800;margin-top:8px;line-height:1.4">Referral Network & International</div>
+            <div style="font-size:12px;color:var(--muted)">Specialist Referral</div>
+            <div style="margin-top:8px;font-size:11px;background:rgba(244,91,105,0.1);border:1px solid rgba(244,91,105,0.2);border-radius:6px;padding:3px 10px;color:var(--red);font-weight:600;display:inline-block">Pipeline Building — Q3+</div>
+          </div>
+          <div>
+            <div class="lbl" style="color:var(--red)">Pain Points</div>
+            <div class="dot-item"><div class="dot" style="background:var(--red)"></div>Spinal Tumor</div>
+            <div class="dot-item"><div class="dot" style="background:var(--red)"></div>Complex Spine</div>
+            <div class="dot-item"><div class="dot" style="background:var(--red)"></div>Multi-disciplinary needs</div>
+            <div class="lbl" style="color:var(--red)">Age Range</div>
+            <div style="font-size:13px">ทุกกลุ่มอายุ</div>
+          </div>
+          <div>
+            <div class="lbl" style="color:var(--red)">Purchase Intent</div>
+            <div style="font-size:13px;line-height:1.6;margin-bottom:8px">Referral จากแพทย์ / โรงพยาบาลอื่น</div>
+            <div class="lbl" style="color:var(--red)">Channel</div>
+            <div style="font-size:12px;color:var(--muted)">Academic, KOL, Hospital Network</div>
+          </div>
+          <div>
+            <div class="lbl" style="color:var(--red)">Consumer Insight</div>
+            <div style="background:rgba(244,91,105,0.06);border:1px solid rgba(244,91,105,0.15);border-left:3px solid var(--red);border-radius:8px;padding:10px 12px;font-size:13px;line-height:1.7">การตัดสินใจอยู่ที่แพทย์ผู้ส่งตัว ต้องสร้าง Trust ใน Clinical Excellence</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ 2: KEY MESSAGE MATRIX ══ -->
+  <section>
+    <div class="sec-head">
+      <div class="sec-num" style="background:var(--teal)">2</div>
+      <div><div class="sec-title">Key Message Matrix</div><div class="sec-sub">สารสื่อสารหลักแยกตามกลุ่มเป้าหมายและบริการ</div></div>
+      <div class="sec-line"></div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:14px">
+
+      <div class="tbl-wrap">
+        <div style="background:rgba(82,72,156,0.08);padding:10px 18px;border-bottom:1px solid var(--border);font-size:11px;font-weight:700;color:var(--purple);text-transform:uppercase;letter-spacing:1px">H1 — General Ortho Patient</div>
+        <table class="tbl">
+          <thead><tr><th>บริการ</th><th>กลุ่มเป้าหมาย</th><th>Key Message</th><th>Emotional Trigger</th></tr></thead>
+          <tbody>
+            <tr><td style="font-weight:600;color:var(--purple)">OPD / ESI</td><td style="color:var(--muted)">ผู้ป่วยปวดเข่า/ไหล่</td><td style="font-style:italic">"ปวดนานแค่ไหน ก็มีทางออก — ตรวจวันนี้ ไม่ต้อง Admit"</td><td><span class="tag" style="background:rgba(82,72,156,0.1);border:1px solid rgba(82,72,156,0.2);color:var(--purple)">ลดความกังวล / ความสะดวก</span></td></tr>
+            <tr><td style="font-weight:600;color:var(--purple)">TKA</td><td style="color:var(--muted)">ผู้สูงอายุ 60+</td><td style="font-style:italic">"เข่าใหม่ ชีวิตใหม่ — กลับมาเดินได้อีกครั้ง"</td><td><span class="tag" style="background:rgba(82,72,156,0.1);border:1px solid rgba(82,72,156,0.2);color:var(--purple)">ความหวัง / คุณภาพชีวิต</span></td></tr>
+            <tr><td style="font-weight:600;color:var(--purple)">Arthroscopic Shoulder</td><td style="color:var(--muted)">นักกีฬา / Active</td><td style="font-style:italic">"ไม่ต้องทนเจ็บ — ผ่าตัดเล็ก ฟื้นเร็ว กลับสนามได้"</td><td><span class="tag" style="background:rgba(82,72,156,0.1);border:1px solid rgba(82,72,156,0.2);color:var(--purple)">Empowerment / ฟื้นฟูเร็ว</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="tbl-wrap">
+        <div style="background:rgba(64,98,187,0.08);padding:10px 18px;border-bottom:1px solid var(--border);font-size:11px;font-weight:700;color:var(--blue);text-transform:uppercase;letter-spacing:1px">H2 — Complex / High-Value Patient</div>
+        <table class="tbl" style="--th-color:var(--blue)">
+          <thead><tr style="background:rgba(64,98,187,0.05)"><th style="color:var(--blue)">บริการ</th><th style="color:var(--blue)">กลุ่มเป้าหมาย</th><th style="color:var(--blue)">Key Message</th><th style="color:var(--blue)">Emotional Trigger</th></tr></thead>
+          <tbody>
+            <tr><td style="font-weight:600;color:var(--blue)">MIS Spine</td><td style="color:var(--muted)">ผู้ป่วยปวดหลัง/ขาชา</td><td style="font-style:italic">"ผ่าตัดกระดูกสันหลังแผลเล็ก — เทคโนโลยีล่าสุด ฟื้นตัวเร็ว"</td><td><span class="tag" style="background:rgba(64,98,187,0.1);border:1px solid rgba(64,98,187,0.2);color:var(--blue)">ความไว้วางใจ / ลด Fear</span></td></tr>
+            <tr><td style="font-weight:600;color:var(--blue)">Spine Open</td><td style="color:var(--muted)">เคสซับซ้อน</td><td style="font-style:italic">"ทีมผู้เชี่ยวชาญพร้อม — ทุกระดับความรุนแรง เราดูแลได้"</td><td><span class="tag" style="background:rgba(64,98,187,0.1);border:1px solid rgba(64,98,187,0.2);color:var(--blue)">ความเชื่อมั่นในทีมแพทย์</span></td></tr>
+            <tr><td style="font-weight:600;color:var(--blue)">DAA Hip</td><td style="color:var(--muted)">ผู้ป่วยข้อสะโพก</td><td style="font-style:italic">"DAA Hip: แผลด้านหน้า ฟื้นไว นอนน้อย กลับบ้านเร็ว"</td><td><span class="tag" style="background:rgba(64,98,187,0.1);border:1px solid rgba(64,98,187,0.2);color:var(--blue)">ลด Downtime / คุณภาพชีวิต</span></td></tr>
+            <tr><td style="font-weight:600;color:var(--blue)">Knee Arthroscope</td><td style="color:var(--muted)">40–55 ปี Active</td><td style="font-style:italic">"รักษาหัวเข่า โดยไม่ต้องเปลี่ยนข้อ — Scope เล็ก หายเร็ว"</td><td><span class="tag" style="background:rgba(64,98,187,0.1);border:1px solid rgba(64,98,187,0.2);color:var(--blue)">Rational + Reassurance</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="tbl-wrap">
+        <div style="background:rgba(244,91,105,0.08);padding:10px 18px;border-bottom:1px solid var(--border);font-size:11px;font-weight:700;color:var(--red);text-transform:uppercase;letter-spacing:1px">H3 — Referral / Specialist</div>
+        <table class="tbl">
+          <thead><tr style="background:rgba(244,91,105,0.05)"><th style="color:var(--red)">บริการ</th><th style="color:var(--red)">กลุ่มเป้าหมาย</th><th style="color:var(--red)">Key Message</th><th style="color:var(--red)">Emotional Trigger</th></tr></thead>
+          <tbody>
+            <tr><td style="font-weight:600;color:var(--red)">Spinal Tumor</td><td style="color:var(--muted)">แพทย์ผู้ส่งตัว</td><td style="font-style:italic">"CoE Ortho: Multi-disciplinary Team พร้อมรับ Complex Case"</td><td><span class="tag" style="background:rgba(244,91,105,0.1);border:1px solid rgba(244,91,105,0.2);color:var(--red)">Clinical Credibility / Trust</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ 3: 4 COMMUNICATION PILLARS ══ -->
+  <section>
+    <div class="sec-head">
+      <div class="sec-num" style="background:var(--purple)">3</div>
+      <div><div class="sec-title">4 Communication Pillars</div><div class="sec-sub">เสาหลัก 4 ด้านของกลยุทธ์การสื่อสาร Q2</div></div>
+      <div class="sec-line"></div>
+    </div>
+    <div class="card-grid2">
+      <div class="card">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px">
+          <div class="pillar-icon" style="background:rgba(82,72,156,0.12);border:2px solid rgba(82,72,156,0.25)">📣</div>
+          <div><div style="font-size:9px;font-weight:700;color:var(--purple);text-transform:uppercase;letter-spacing:1px">Pillar 01</div><div style="font-size:14px;font-weight:800">Awareness & Education</div><div style="font-size:12px;color:var(--muted)">สร้างการรับรู้และให้ความรู้</div></div>
+        </div>
+        <div style="font-size:13px;line-height:1.7;margin-bottom:12px;padding-bottom:12px;border-bottom:1px solid var(--border)">สร้าง Brand Awareness ของ CoE Ortho และให้ความรู้เรื่องโรคกระดูกสันหลัง Hip Knee แก่กลุ่มเป้าหมาย เพื่อกระตุ้น Need Recognition</div>
+        <div class="lbl" style="color:var(--purple)">Key Activities</div>
+        <div class="dot-item"><div class="dot" style="background:var(--purple)"></div>Health Content Series (Facebook/IG)</div>
+        <div class="dot-item"><div class="dot" style="background:var(--purple)"></div>SEO Blog บทความสุขภาพ</div>
+        <div class="dot-item"><div class="dot" style="background:var(--purple)"></div>Infographic / Short Video</div>
+        <div class="dot-item"><div class="dot" style="background:var(--purple)"></div>LINE OA Health Tips</div>
+      </div>
+      <div class="card">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px">
+          <div class="pillar-icon" style="background:rgba(64,98,187,0.12);border:2px solid rgba(64,98,187,0.25)">🤝</div>
+          <div><div style="font-size:9px;font-weight:700;color:var(--blue);text-transform:uppercase;letter-spacing:1px">Pillar 02</div><div style="font-size:14px;font-weight:800">Referral & Trust Building</div><div style="font-size:12px;color:var(--muted)">สร้างความเชื่อมั่นผ่าน Referral</div></div>
+        </div>
+        <div style="font-size:13px;line-height:1.7;margin-bottom:12px;padding-bottom:12px;border-bottom:1px solid var(--border)">ขยาย Referral Network จากแพทย์ GP และโรงพยาบาลเครือข่าย เพื่อเพิ่ม New HN ผ่านช่องทาง Professional</div>
+        <div class="lbl" style="color:var(--blue)">Key Activities</div>
+        <div class="dot-item"><div class="dot" style="background:var(--blue)"></div>CME / Webinar สำหรับแพทย์</div>
+        <div class="dot-item"><div class="dot" style="background:var(--blue)"></div>Doctor Referral Program</div>
+        <div class="dot-item"><div class="dot" style="background:var(--blue)"></div>Academic Symposium</div>
+        <div class="dot-item"><div class="dot" style="background:var(--blue)"></div>KOL Engagement</div>
+      </div>
+      <div class="card">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px">
+          <div class="pillar-icon" style="background:rgba(89,195,195,0.12);border:2px solid rgba(89,195,195,0.3)">🎯</div>
+          <div><div style="font-size:9px;font-weight:700;color:var(--teal);text-transform:uppercase;letter-spacing:1px">Pillar 03</div><div style="font-size:14px;font-weight:800">Demand Generation</div><div style="font-size:12px;color:var(--muted)">กระตุ้นความต้องการและ Conversion</div></div>
+        </div>
+        <div style="font-size:13px;line-height:1.7;margin-bottom:12px;padding-bottom:12px;border-bottom:1px solid var(--border)">กระตุ้นผู้ป่วยที่มีความต้องการอยู่แล้วให้ตัดสินใจเข้ารับบริการ ผ่าน Targeted Campaign และ OPD Promotion</div>
+        <div class="lbl" style="color:var(--teal)">Key Activities</div>
+        <div class="dot-item"><div class="dot" style="background:var(--teal)"></div>Paid Digital Ads (Facebook/Google)</div>
+        <div class="dot-item"><div class="dot" style="background:var(--teal)"></div>OPD Health Check Package</div>
+        <div class="dot-item"><div class="dot" style="background:var(--teal)"></div>LINE OA Campaign</div>
+        <div class="dot-item"><div class="dot" style="background:var(--teal)"></div>Retargeting</div>
+      </div>
+      <div class="card">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px">
+          <div class="pillar-icon" style="background:rgba(244,91,105,0.1);border:2px solid rgba(244,91,105,0.25)">🌐</div>
+          <div><div style="font-size:9px;font-weight:700;color:var(--red);text-transform:uppercase;letter-spacing:1px">Pillar 04</div><div style="font-size:14px;font-weight:800">Digital Presence</div><div style="font-size:12px;color:var(--muted)">เสริมความแข็งแกร่งช่องทาง Digital</div></div>
+        </div>
+        <div style="font-size:13px;line-height:1.7;margin-bottom:12px;padding-bottom:12px;border-bottom:1px solid var(--border)">พัฒนาและรักษา Digital Touchpoint ให้ครอบคลุม Patient Journey ตั้งแต่ Awareness จนถึง Post-treatment</div>
+        <div class="lbl" style="color:var(--red)">Key Activities</div>
+        <div class="dot-item"><div class="dot" style="background:var(--red)"></div>Hospital Website Optimization</div>
+        <div class="dot-item"><div class="dot" style="background:var(--red)"></div>YouTube Case Study / Testimonial</div>
+        <div class="dot-item"><div class="dot" style="background:var(--red)"></div>Review Management</div>
+        <div class="dot-item"><div class="dot" style="background:var(--red)"></div>LINE Official Account</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ 4: CHANNEL PLAN ══ -->
+  <section>
+    <div class="sec-head">
+      <div class="sec-num" style="background:var(--blue)">4</div>
+      <div><div class="sec-title">Channel Plan</div><div class="sec-sub">ช่องทางการสื่อสารแยกตาม Touchpoint และกลุ่มเป้าหมาย</div></div>
+      <div class="sec-line"></div>
+    </div>
+    <div class="tbl-wrap">
+      <table class="tbl">
+        <thead><tr><th>ช่องทาง</th><th>ประเภท</th><th>Communication Pillar</th><th>กลุ่มเป้าหมาย</th><th>ความถี่</th><th>KPI หลัก</th></tr></thead>
+        <tbody>
+          <tr><td style="font-weight:700;color:var(--purple)">Facebook / Instagram</td><td><span class="tag" style="background:rgba(82,72,156,0.1);border:1px solid rgba(82,72,156,0.2);color:var(--purple)">Owned + Paid</span></td><td>Awareness + Demand</td><td style="color:var(--muted)">H1 + H2</td><td>3–5 posts/สัปดาห์</td><td style="color:var(--muted);font-size:12px">Reach, Engagement, Click-to-OPD</td></tr>
+          <tr><td style="font-weight:700;color:var(--purple)">LINE Official Account</td><td><span class="tag" style="background:rgba(82,72,156,0.1);border:1px solid rgba(82,72,156,0.2);color:var(--purple)">Owned</span></td><td>Awareness + Demand</td><td style="color:var(--muted)">H1</td><td>2–3 เนื้อหา/สัปดาห์</td><td style="color:var(--muted);font-size:12px">Open Rate, OPD Booking</td></tr>
+          <tr><td style="font-weight:700;color:var(--blue)">Google / SEO</td><td><span class="tag" style="background:rgba(64,98,187,0.1);border:1px solid rgba(64,98,187,0.2);color:var(--blue)">Owned + Paid</span></td><td>Demand Generation</td><td style="color:var(--muted)">H1 + H2</td><td>4 บทความ/เดือน</td><td style="color:var(--muted);font-size:12px">Organic Traffic, Conversion</td></tr>
+          <tr><td style="font-weight:700;color:var(--blue)">YouTube</td><td><span class="tag" style="background:rgba(64,98,187,0.1);border:1px solid rgba(64,98,187,0.2);color:var(--blue)">Owned</span></td><td>Trust + Awareness</td><td style="color:var(--muted)">H2</td><td>1–2 videos/เดือน</td><td style="color:var(--muted);font-size:12px">Views, Watch Time</td></tr>
+          <tr><td style="font-weight:700;color:var(--teal)">PR / Health Media</td><td><span class="tag" style="background:rgba(89,195,195,0.1);border:1px solid rgba(89,195,195,0.3);color:var(--teal)">Earned</span></td><td>Awareness + Trust</td><td style="color:var(--muted)">H2</td><td>2 บทความ/เดือน</td><td style="color:var(--muted);font-size:12px">Media Coverage, Reach</td></tr>
+          <tr><td style="font-weight:700;color:var(--teal)">CME / Webinar</td><td><span class="tag" style="background:rgba(89,195,195,0.1);border:1px solid rgba(89,195,195,0.3);color:var(--teal)">Events</span></td><td>Referral Building</td><td style="color:var(--muted)">H2 + H3</td><td>1 ครั้ง/เดือน</td><td style="color:var(--muted);font-size:12px">จำนวนแพทย์เข้าร่วม, Referral Cases</td></tr>
+          <tr><td style="font-weight:700;color:var(--red)">Academic / KOL</td><td><span class="tag" style="background:rgba(244,91,105,0.1);border:1px solid rgba(244,91,105,0.2);color:var(--red)">Earned + Events</span></td><td>Specialist Referral</td><td style="color:var(--muted)">H3</td><td>Quarterly</td><td style="color:var(--muted);font-size:12px">Referral Network Growth</td></tr>
+          <tr><td style="font-weight:700;color:var(--red)">Hospital Website</td><td><span class="tag" style="background:rgba(244,91,105,0.1);border:1px solid rgba(244,91,105,0.2);color:var(--red)">Owned</span></td><td>All Pillars</td><td style="color:var(--muted)">ทุกกลุ่ม</td><td>Update ต่อเนื่อง</td><td style="color:var(--muted);font-size:12px">Organic Visit, Appointment</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ══ 5: Q2 TIMELINE ══ -->
+  <section>
+    <div class="sec-head">
+      <div class="sec-num" style="background:var(--teal)">5</div>
+      <div><div class="sec-title">Q2 Activity Timeline</div><div class="sec-sub">แผนกิจกรรมการสื่อสาร เมษายน — มิถุนายน 2026</div></div>
+      <div class="sec-line"></div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:20px">
+
+      <div>
+        <div class="month-head"><div class="month-dot" style="background:var(--purple)"></div><div class="month-label" style="color:var(--purple)">เมษายน 2026</div><div class="month-line"></div></div>
+        <div class="tl-items">
+          <div class="tl-item"><div class="tl-dot" style="background:var(--blue)"></div><div class="tl-body"><div class="tl-act">Kick-off Meeting: BD Ortho × CoE × Marketing</div><div class="tl-det">วางแผนร่วม กำหนด Message และ Channel สำหรับ Q2</div></div><span class="tl-tag" style="color:var(--blue);background:rgba(64,98,187,0.1);border:1px solid rgba(64,98,187,0.25)">internal</span></div>
+          <div class="tl-item"><div class="tl-dot" style="background:var(--teal)"></div><div class="tl-body"><div class="tl-act">Content Brief & Creative Development</div><div class="tl-det">ผลิต Content Series Spine / Hip / Knee พร้อม Visual Identity</div></div><span class="tl-tag" style="color:var(--teal);background:rgba(89,195,195,0.1);border:1px solid rgba(89,195,195,0.3)">content</span></div>
+          <div class="tl-item"><div class="tl-dot" style="background:var(--teal)"></div><div class="tl-body"><div class="tl-act">Referral Doctor Outreach Program</div><div class="tl-det">ติดต่อ GP Network และ Specialist เพื่อเชิญ Webinar เดือนพฤษภาคม</div></div><span class="tl-tag" style="color:var(--teal);background:rgba(89,195,195,0.1);border:1px solid rgba(89,195,195,0.3)">referral</span></div>
+        </div>
+      </div>
+
+      <div>
+        <div class="month-head"><div class="month-dot" style="background:var(--blue)"></div><div class="month-label" style="color:var(--blue)">พฤษภาคม 2026</div><div class="month-line"></div></div>
+        <div class="tl-items">
+          <div class="tl-item"><div class="tl-dot" style="background:var(--purple)"></div><div class="tl-body"><div class="tl-act">Digital Campaign Launch — H2 Spine & Hip</div><div class="tl-det">Facebook + LINE + Google Ads ปล่อยพร้อมกัน targeting กลุ่ม H2</div></div><span class="tl-tag" style="color:var(--purple);background:rgba(82,72,156,0.1);border:1px solid rgba(82,72,156,0.2)">campaign</span></div>
+          <div class="tl-item"><div class="tl-dot" style="background:var(--teal)"></div><div class="tl-body"><div class="tl-act">CME Webinar สำหรับแพทย์ Referral</div><div class="tl-det">สร้าง Clinical Trust ในทีมแพทย์ CoE Ortho</div></div><span class="tl-tag" style="color:var(--teal);background:rgba(89,195,195,0.1);border:1px solid rgba(89,195,195,0.3)">referral</span></div>
+          <div class="tl-item"><div class="tl-dot" style="background:var(--teal)"></div><div class="tl-body"><div class="tl-act">YouTube Case Study Launch</div><div class="tl-det">เผยแพร่ Case Study แรก: MIS Spine Surgery Patient Journey</div></div><span class="tl-tag" style="color:var(--teal);background:rgba(89,195,195,0.1);border:1px solid rgba(89,195,195,0.3)">content</span></div>
+          <div class="tl-item"><div class="tl-dot" style="background:var(--purple)"></div><div class="tl-body"><div class="tl-act">OPD Drive: Facebook Campaign H1</div><div class="tl-det">Targeted Ad กลุ่มปวดเข่า/ไหล่ เพื่อดึง New HN</div></div><span class="tl-tag" style="color:var(--purple);background:rgba(82,72,156,0.1);border:1px solid rgba(82,72,156,0.2)">campaign</span></div>
+        </div>
+      </div>
+
+      <div>
+        <div class="month-head"><div class="month-dot" style="background:var(--teal)"></div><div class="month-label" style="color:var(--teal)">มิถุนายน 2026</div><div class="month-line"></div></div>
+        <div class="tl-items">
+          <div class="tl-item"><div class="tl-dot" style="background:var(--purple)"></div><div class="tl-body"><div class="tl-act">OPD Health Check Package — Spine</div><div class="tl-det">Promotion ตรวจกระดูกสันหลังราคาพิเศษ ผ่าน LINE OA + Facebook</div></div><span class="tl-tag" style="color:var(--purple);background:rgba(82,72,156,0.1);border:1px solid rgba(82,72,156,0.2)">campaign</span></div>
+          <div class="tl-item"><div class="tl-dot" style="background:var(--teal)"></div><div class="tl-body"><div class="tl-act">PR Media: Health Article เดือน 2</div><div class="tl-det">เผยแพร่ผ่าน Health Media ออนไลน์ เรื่อง Spine Care</div></div><span class="tl-tag" style="color:var(--teal);background:rgba(89,195,195,0.1);border:1px solid rgba(89,195,195,0.3)">content</span></div>
+          <div class="tl-item"><div class="tl-dot" style="background:var(--red)"></div><div class="tl-body"><div class="tl-act">Mid-Q2 Performance Review</div><div class="tl-det">ทบทวน KPI ทุก Channel ปรับ Creative และ Budget ตาม Performance</div></div><span class="tl-tag" style="color:var(--red);background:rgba(244,91,105,0.1);border:1px solid rgba(244,91,105,0.2)">review</span></div>
+          <div class="tl-item"><div class="tl-dot" style="background:var(--teal)"></div><div class="tl-body"><div class="tl-act">Academic Network — H3 Pipeline Building</div><div class="tl-det">เริ่มสร้าง Spinal Tumor Referral Network สำหรับ Q3</div></div><span class="tl-tag" style="color:var(--teal);background:rgba(89,195,195,0.1);border:1px solid rgba(89,195,195,0.3)">referral</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ 6: KPI & MEASUREMENT ══ -->
+  <section>
+    <div class="sec-head">
+      <div class="sec-num" style="background:var(--red)">6</div>
+      <div><div class="sec-title">KPI & Measurement</div><div class="sec-sub">ตัวชี้วัดความสำเร็จของกลยุทธ์การสื่อสาร Q2</div></div>
+      <div class="sec-line"></div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:14px">
+
+      <div class="tbl-wrap">
+        <div class="kpi-head" style="background:rgba(82,72,156,0.06)"><span style="font-size:16px">💼</span><span class="kpi-head-text" style="color:var(--purple)">Business KPIs</span></div>
+        <table class="tbl">
+          <thead><tr style="background:rgba(82,72,156,0.04)"><th style="color:var(--purple)">Metric</th><th style="color:var(--purple)">Baseline</th><th style="color:var(--purple)">Target 2026</th><th style="color:var(--purple)">Unit</th><th style="color:var(--purple)">Data Source</th></tr></thead>
+          <tbody>
+            <tr><td style="font-weight:600">New HN (Non-Trauma)</td><td style="color:var(--muted)">3,534</td><td style="font-weight:700;color:var(--purple)">4,000</td><td style="color:var(--muted);font-size:12px">HN/ปี</td><td style="color:var(--muted);font-size:12px">HIS / ระบบโรงพยาบาล</td></tr>
+            <tr><td style="font-weight:600">H1 Revenue</td><td style="color:var(--muted)">350.8M</td><td style="font-weight:700;color:var(--purple)">374.7M</td><td style="color:var(--muted);font-size:12px">THB</td><td style="color:var(--muted);font-size:12px">Revenue Report</td></tr>
+            <tr><td style="font-weight:600">H2 Revenue</td><td style="color:var(--muted)">98.4M</td><td style="font-weight:700;color:var(--purple)">173.9M</td><td style="color:var(--muted);font-size:12px">THB</td><td style="color:var(--muted);font-size:12px">Revenue Report</td></tr>
+            <tr><td style="font-weight:600">Total Ortho Revenue</td><td style="color:var(--muted)">449.2M (F2025)</td><td style="font-weight:700;color:var(--purple)">506.8M</td><td style="color:var(--muted);font-size:12px">THB</td><td style="color:var(--muted);font-size:12px">Finance</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="tbl-wrap">
+        <div class="kpi-head" style="background:rgba(64,98,187,0.06)"><span style="font-size:16px">🏥</span><span class="kpi-head-text" style="color:var(--blue)">Service KPIs</span></div>
+        <table class="tbl">
+          <thead><tr style="background:rgba(64,98,187,0.04)"><th style="color:var(--blue)">Metric</th><th style="color:var(--blue)">Baseline</th><th style="color:var(--blue)">Target 2026</th><th style="color:var(--blue)">Unit</th><th style="color:var(--blue)">Data Source</th></tr></thead>
+          <tbody>
+            <tr><td style="font-weight:600">OPD Volume</td><td style="color:var(--muted)">–</td><td style="font-weight:700;color:var(--blue)">+16.5%</td><td style="color:var(--muted);font-size:12px">visits</td><td style="color:var(--muted);font-size:12px">OPD System</td></tr>
+            <tr><td style="font-weight:600">Spine Surgery Cases</td><td style="color:var(--muted)">11 Open (2025)</td><td style="font-weight:700;color:var(--blue)">110 cases</td><td style="color:var(--muted);font-size:12px">cases/ปี</td><td style="color:var(--muted);font-size:12px">OR Record</td></tr>
+            <tr><td style="font-weight:600">MIS Spine Cases</td><td style="color:var(--muted)">65</td><td style="font-weight:700;color:var(--blue)">75</td><td style="color:var(--muted);font-size:12px">cases/ปี</td><td style="color:var(--muted);font-size:12px">OR Record</td></tr>
+            <tr><td style="font-weight:600">DAA Hip Cases</td><td style="color:var(--muted)">35</td><td style="font-weight:700;color:var(--blue)">47</td><td style="color:var(--muted);font-size:12px">cases/ปี</td><td style="color:var(--muted);font-size:12px">OR Record</td></tr>
+            <tr><td style="font-weight:600">TKA Cases</td><td style="color:var(--muted)">30</td><td style="font-weight:700;color:var(--blue)">36</td><td style="color:var(--muted);font-size:12px">cases/ปี</td><td style="color:var(--muted);font-size:12px">OR Record</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="tbl-wrap">
+        <div class="kpi-head" style="background:rgba(89,195,195,0.08)"><span style="font-size:16px">📊</span><span class="kpi-head-text" style="color:var(--teal)">Marketing / Communication KPIs</span></div>
+        <table class="tbl">
+          <thead><tr style="background:rgba(89,195,195,0.05)"><th style="color:var(--teal)">Metric</th><th style="color:var(--teal)">Baseline</th><th style="color:var(--teal)">Target 2026</th><th style="color:var(--teal)">Unit</th><th style="color:var(--teal)">Data Source</th></tr></thead>
+          <tbody>
+            <tr><td style="font-weight:600">Digital Reach (Facebook/IG)</td><td style="color:var(--muted)">–</td><td style="font-weight:700;color:var(--teal)">TBD</td><td style="color:var(--muted);font-size:12px">คน/เดือน</td><td style="color:var(--muted);font-size:12px">Meta Business</td></tr>
+            <tr><td style="font-weight:600">OPD Booking via Digital</td><td style="color:var(--muted)">–</td><td style="font-weight:700;color:var(--teal)">+20%</td><td style="color:var(--muted);font-size:12px">vs Q1</td><td style="color:var(--muted);font-size:12px">CRM / Booking System</td></tr>
+            <tr><td style="font-weight:600">Referral Cases จากแพทย์</td><td style="color:var(--muted)">–</td><td style="font-weight:700;color:var(--teal)">Track Monthly</td><td style="color:var(--muted);font-size:12px">cases</td><td style="color:var(--muted);font-size:12px">BD / Referral Log</td></tr>
+            <tr><td style="font-weight:600">CME / Webinar Participation</td><td style="color:var(--muted)">–</td><td style="font-weight:700;color:var(--teal)">≥30 แพทย์/ครั้ง</td><td style="color:var(--muted);font-size:12px">คน</td><td style="color:var(--muted);font-size:12px">Event Record</td></tr>
+            <tr><td style="font-weight:600">Content Engagement Rate</td><td style="color:var(--muted)">–</td><td style="font-weight:700;color:var(--teal)">≥3%</td><td style="color:var(--muted);font-size:12px">%</td><td style="color:var(--muted);font-size:12px">Meta Insights</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <div class="footer">CoE Orthopaedic Communication Strategy · Q2 2026 · Aligned with SO4 — KR.5.1 · Bangkok Hospital Phuket</div>
+
+</div>
+</body>
+</html>
